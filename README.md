@@ -1,6 +1,10 @@
 # ⚡ Prism Pulse — Daily Optical Logic & Laser Fusion Game for Reddit
 
-**Prism Pulse** (`prism-pulse`) is a bite-sized daily optical logic puzzle built natively on **Reddit’s Developer Platform (`Devvit Web`)** for **Reddit’s Game of the Day Hackathon 2026**.
+**Prism Pulse** (`prism-pulse-daily`) is a bite-sized daily optical logic puzzle built natively on **Reddit’s Developer Platform (`Devvit Web`)** for **Reddit’s Game of the Day Hackathon 2026**.
+
+- **Live Playable Demo Post on Reddit (`r/PrismPulseGame`):** https://www.reddit.com/r/PrismPulseGame/comments/1y72mjf/prism_pulse_331_20261127_can_you_hit_par_8/
+- **Reddit Developer App Listing:** https://developers.reddit.com/apps/prism-pulse-daily
+- **Public Source Repository:** https://github.com/huyvv533/prism-pulse
 
 Every UTC day (`YYYY-MM-DD`), every Redditor around the world receives the exact same **5×5 optical circuit**—complete with an exhaustively verified **global minimum move count (`Par`)**—and competes for the daily subreddit leaderboard, consecutive daily streaks, and spoiler-free Emoji Grid bragging rights in the comment thread.
 
