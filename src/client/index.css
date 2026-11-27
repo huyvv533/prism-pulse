@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+
+:root {
+  --al-bg: #f8fafc;
+  --al-surface: #ffffff;
+  --al-glass: rgba(255, 255, 255, 0.88);
+  --al-ink: #0f172a;
+  --al-muted: #475569;
+  --al-azure: #0284c7;
+  --al-azure-bright: #0ea5e9;
+  --al-gold: #f59e0b;
+  --al-gold-bright: #fbbf24;
+  --al-emerald: #10b981;
+  --al-emerald-dark: #059669;
+  --al-border: #e2e8f0;
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(circle at 12% 4%, rgba(14, 165, 233, 0.12), transparent 40%),
+    radial-gradient(circle at 88% 8%, rgba(245, 158, 11, 0.12), transparent 38%),
+    var(--al-bg);
+  color: var(--al-ink);
+  font-family:
+    'Inter',
+    'Segoe UI',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  user-select: none;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.al-dialog p,
+.al-dialog li {
+  text-wrap: pretty;
+}
+
+.al-glass-card {
+  background: var(--al-glass);
+  backdrop-filter: blur(16px) saturate(170%);
+  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  border: 1px solid var(--al-border);
+  box-shadow: 0 12px 32px -12px rgba(15, 23, 42, 0.1);
+}
+
+.al-active-frame {
+  background:
+    linear-gradient(var(--al-surface), var(--al-surface)) padding-box,
+    linear-gradient(
+        135deg,
+        var(--al-azure),
+        var(--al-azure-bright),
+        var(--al-gold),
+        var(--al-emerald)
+      )
+      border-box;
+  border: 2px solid transparent;
+  box-shadow: 0 16px 38px -14px rgba(2, 132, 199, 0.18);
+}
+
+.al-tile-btn {
+  transition:
+    transform 0.22s var(--ease-spring),
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.22s var(--ease-spring);
+  @media (prefers-reduced-motion: reduce) {
+    transition:
+      background-color 0.18s ease,
+      border-color 0.18s ease;
+  }
+}
+
+.al-tile-btn:not(:disabled):hover {
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translateY(-2px);
+  }
+  box-shadow: 0 6px 14px -4px rgba(15, 23, 42, 0.12);
+}
+
+.al-tile-btn:not(:disabled):active {
+  @media (prefers-reduced-motion: no-preference) {
+    transform: scale(0.95);
+  }
+}
+
+.al-btn {
+  transition:
+    transform 0.2s var(--ease-spring),
+    background-color 0.18s ease,
+    box-shadow 0.2s var(--ease-spring);
+  @media (prefers-reduced-motion: reduce) {
+    transition: background-color 0.18s ease;
+  }
+}
+
+.al-btn:not(:disabled):hover {
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translateY(-1.5px);
+  }
+}
+
+.al-btn:not(:disabled):active {
+  @media (prefers-reduced-motion: no-preference) {
+    transform: scale(0.97);
+  }
+}
+
+@keyframes beacon-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+.al-beacon-lit {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: beacon-breathe 2.2s ease-in-out infinite;
+  }
+}
+
+/* Native Modal Dialog rules per Modern Web Guidance */
+dialog.al-dialog {
+  margin: auto;
+  border: 1px solid var(--al-border);
+  border-radius: 20px;
+  padding: 0;
+  max-width: 460px;
+  width: calc(100% - 24px);
+  background: var(--al-surface);
+  color: var(--al-ink);
+  box-shadow: 0 24px 54px -12px rgba(15, 23, 42, 0.28);
+}
+
+dialog.al-dialog[open] {
+  display: block;
+}
+
+dialog.al-dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog.al-dialog::backdrop {
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+  overscroll-behavior: contain;
+}
